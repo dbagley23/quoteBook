@@ -1,0 +1,30 @@
+<html>
+<head>
+	<title>Angular from scratch</title>
+  <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body ng-app="quoteBook" ng-controller="mainCtrl" >
+	<input placeholder="Quote" ng-model="quoteField" class="quote"></input>
+	<input placeholder="Author" ng-model="authorField" class="author"></input>
+	<button ng-click="addQuote()">Add Quote</button>
+        <select ng-model="searchCategory" <!--ng-change="test()" ng-change fires when the selected item is changed, like a button--> class="input-medium">
+          <option></option>
+          <option>inspirational</option>
+          <option>thought provoking</option>
+        </select>
+    <input id="quoteSort" ng-model="searchQuote" class="form-control" placeholder="Category">
+	<ul>
+		<li ng-repeat="quote in quotes | filter:searchCategory | filter:searchQuote track by $index">
+			<div class="quoteText">
+				<button ng-click='deleteQuote(quote.text)'>X</button>
+				{{quote.text}}
+			</div>
+			<div class="authorText">{{quote.author}}</div>
+			<div class="categoryText">{{quote.category}}</div>
+		</li>
+	</ul>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.3/angular.js"></script>
+	<script src="js/app.js"></script>
+	<script src="js/mainCtrl.js"></script>
+	<script src="js/dataService.js"></script>
+</body>

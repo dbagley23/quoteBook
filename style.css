@@ -1,0 +1,19 @@
+.author{
+	width: 20%;
+	display: block;
+}
+
+.quote{
+	width: 80%;
+	display: block;
+}
+
+.quoteText{
+	font-size: xx-large;
+	font-family: 'Times New Roman', Times, serif;
+}
+
+.authorText{
+	font-size: larger;
+	padding-bottom: 20px;
+}
